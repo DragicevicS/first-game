@@ -51,7 +51,6 @@ function create() {
 
   player = this.physics.add.sprite(100, 450, "dude");
 
-  player.setBounce(0.2);
   player.setCollideWorldBounds(true);
 
   this.anims.create({
@@ -132,6 +131,7 @@ function create() {
     player.anims.play("turn");
 
     gameOver = true;
+    setTimeout(() => location.reload(), 5000);
   }
 
   this.physics.add.collider(player, bombs, hitBomb, null, this);
